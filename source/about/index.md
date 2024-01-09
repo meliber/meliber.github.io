@@ -26,4 +26,6 @@ Linux user, love open source, technology, reading and learning.
 - [The Federalist Papers](https://www.goodreads.com/book/show/36166009-the-federalist-papers)
 - [The Shortest History of Europe](https://www.goodreads.com/book/show/6934913-the-shortest-history-of-europe)
 - [Data Structures and Algorithms in Python](https://www.goodreads.com/book/show/13838796-data-structures-and-algorithms-in-python)
+- [A Random Walk Down Wall Street: The Time-Tested Strategy for Successful Investing](https://www.goodreads.com/book/show/40242274-a-random-walk-down-wall-street)
+- [The Art of Unix Programming](https://www.goodreads.com/en/book/show/104745)
 
