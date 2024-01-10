@@ -45,9 +45,9 @@ The `avahi-daemon.service` can be triggered by `avahi-daemon.socket`. So enable 
 ## Trouble shooting
 The `sane` package on Arch Linux contains a cli tool `scanimage`. After the basic setup, `scanimage -L` should list the scanner. However I encountered some problems.
 
-### custom TLD
+### Custom TLD
 I used `.home` as TLD instead of `.local` in home network. To deal with the TLD, `/etc/nsswitch.conf` used `mdns` instead of `mdns_minimal` because [the `mdns_minimal` module handles queries for the `.local` TLD only](https://wiki.archlinux.org/title/avahi#Configuring_mDNS_for_custom_TLD).
-Since `home` is configured as the domain for LAN network, I set `domain-name=home` in `/etc/avahi/avahi-daemon.conf`.  This is the root cause of the problem that avahi can't discover service.
+Since `.home` is configured as the domain for LAN network, I set `domain-name=home` in `/etc/avahi/avahi-daemon.conf`.  This is the root cause of the problem that avahi can't discover service.
 
 When`avahi-browse --all --ignore-local --resolve --terminate` was running to list services, I monitored the mdns traffic by wireshark
 ```bash
@@ -60,6 +60,7 @@ question PTR _sleep-proxy._udp.local, "QM" question`
  MDNS 394 Standard query response 0x0000 PTR amzn.dmgr:*:*:612333._amzn-wplay._tcp.local PTR amzn.dmgr:*:*:612333._amzn-wplay._tcp.local SRV, cache flush 0 0 39474 amazon-*-home.local TXT, cache flush`
 As we can see, it is a response of mDNS query from `amazon-*-home.local`. Pay attention to the "-home.local" part. As "home" is the domain of LAN network, the hostname should be `amazon-*.home
 ```
+It's a mDNS multicast message from an amazon device. The hostname of this device has a `.local` suffix.
 So, I checked the host name, `avahi-resolve-host-name amazon-*-home.local` and got the right ip:
 ```
 amazon-*-home.local     10.0.7.85
@@ -74,6 +75,7 @@ or try this:
 ping amazon-*-home
 ping: amazon-*-home: Name or service not known
 ```
+This amazon device added "-home" to its hostname, and used ".local" as its TLD.
 However, I can do this:
 ```
 ping amazon-*
@@ -87,9 +89,9 @@ PING amazon-*.home (10.0.7.85) 56(84) bytes of data.
 64 bytes from amazon-*.home (10.0.7.85): icmp_seq=1 ttl=64 time=165 ms
 ```
 
-So, even `.home` is the domain of the home network, the avahi service broadcast may be hard coded to use `.local`. This should be the root of all these quirks.
+So, even `.home` is the domain of the home network, the avahi service of devices may be hard coded to use `.local`. This should be the root of all these quirks.
 
-I commented out `domain-name=home` in `/etc/avahi/avahi-daemon.conf`, reverted back to the default `domain-name=local`. And, `avahi-browse --all --ignore-local --resolve --terminate` got all the services.
+I commented out `domain-name=home` in `/etc/avahi/avahi-daemon.conf`, reverted back to the default `domain-name=local`. And, `avahi-browse --all --ignore-local --resolve --terminate` gets all the services.
 
 ### Intermittent connection failure
 The scanner is set static IPv4 and IPv6 with DHCP through its console. Sometimes when I start `simple-scan`, I get errors that `simple-scan` cannot connect to the scanner. Running `scanimage -L` can see the scanner is online with its IPv4 address. However, if I run `scanimage -L` again, the scanner is listed with its IPv6 address. 
