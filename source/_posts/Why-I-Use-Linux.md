@@ -3,14 +3,14 @@ title: Why I Use Linux
 date: 2024-01-11 15:17:31
 tags:
 ---
-I tried to use Linux back in 2004, and started to use it as a daily operating system in 2016. Maybe because I wasn't (though I tried to be one) an IT worker, I never met a person using Linux in person (using Redhat Workstation for Seismic Data Interpretation doesn't count). I am asked by many people why using Linux?
+I tried to use Linux back in 2004, and started to use it as a daily operating system in 2016. Maybe because I wasn't (though I tried to be one) an IT worker, I never met a person using Linux in person (using Redhat Workstation for Seismic Data Interpretation doesn't count). I was asked by many people why using Linux?
 
 Let me figure out an answer.
 
 ## For Curiosity
 Thank to the Internet booming in 1990s, even shools in China were rush to buy computers so they could list them in their introductions. I was taught to use Wubi input method to type in Chinese in 1999, on a Intel 486 compatible computer manufatured by Founder. That computer ran DOS. But the preface of my computer textbook told me that Unix-like system was the most advanced, elegant and stable operating system, mostly used by mainframe computers.
 
-Those ideas in the preface chapter drove me crazy. I kept wondering what was Unix and why it's so powerful. I tried Windows, Internet and Red Alert 2 in 2002 during my senior middle school time. Still I didnt' had a chance to experience Unix or Linux.
+Those ideas in the preface chapter drove me crazy. I kept wondering what was Unix and why it's so powerful. I tried Windows, Internet and Red Alert 2 in 2002 during my senior middle school time. Still I didnt' have a chance to experience Unix or Linux.
 
 Ubuntu was launched in 2004. So many people were talking about it. I ordered and got a copy of Ubuntu 4.10 mailed from Netherlands right after I attended university in September 2004. I could finally fulfill my curiosity about Unix.
 
@@ -18,7 +18,7 @@ Ubuntu was launched in 2004. So many people were talking about it. I ordered and
 Right before and after the time when I got Ubuntu, I read a lot books about Unix and free software movement. The ideas of RMS (Richard Mattthew Stallman) convinced me that free software is an implement of political freedom in cyber domain. And free software is necessary for digital privacy. Since I was not allowed to pursue political freedom, at least I can get free software. 
 Those legendary hackers invented Linux, gcc, BSD, Firefox, LibreOffice, VLC, Mplayer, Keepass. Even the whole Internet is built on free software. By choosing those tools, I got high quality software free of charge, and (part of) my freedom.
 
-## Free of Malware
+## Free from Malware
 In the early days of 2000s, malware were flooded on Internet. I was so tired to get rid of those IE plugins, toolbars for my friends and myself. Linux is the invincible on Internet. I didn't worry about those malware when I was using Firefox and VLC on Ubuntu. That's a big relief.
 
 ## Free Internet Access
