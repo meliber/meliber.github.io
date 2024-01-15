@@ -8,7 +8,9 @@ I tried to use Linux back in 2004, and started to use it as a daily operating sy
 Let me figure out an answer.
 
 ## For Curiosity
-Thank to the Internet booming in 1990s, even shools in China were rush to buy computers so they could list them in their introductions. I was taught to use Wubi input method to type in Chinese in 1999, on a Intel 486 compatible computer manufatured by Founder. That computer ran DOS. But the preface of my computer textbook told me that Unix-like system was the most advanced, elegant and stable operating system, mostly used by mainframe computers.
+Thank to the Internet booming in 1990s, even shools in China were rush to buy computers so they could list them in their introductions. I was taught to use Wubi input method to type in Chinese in 1999, on a Intel 486 compatible computer manufatured by Founder. 
+![The Wubi Practice Software](https://assets.meliber.work/wubi-practice-software.jpg)
+That computer ran DOS. But the preface of my computer textbook told me that Unix-like system was the most advanced, elegant and stable operating system, mostly used by mainframe computers.
 
 Those ideas in the preface chapter drove me crazy. I kept wondering what was Unix and why it's so powerful. I tried Windows, Internet and Red Alert 2 in 2002 during my senior middle school time. Still I didnt' have a chance to experience Unix or Linux.
 
