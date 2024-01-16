@@ -7,6 +7,8 @@ tags:
 
 I have used my network scanner through Windows for a long time. It works well except I need to get a Windows laptop. Although the default storage path of the scanner resides in a samba server, it is still tedious to do daily scan. I managed to set it up on Linux. This blog is for my reference.
 
+<!-- more -->
+
 ## Device and system
 The scanner is [Canon MF113w](https://www.canon.ca/en/product?name=imageCLASS_MF113w&category=/en/products/Printers/Office-Printers/Small-Office-and-Home-Office/Black---White-Printers). The OS of my desktop is Arch Linux. Home network is managed by OpenWrt.
 

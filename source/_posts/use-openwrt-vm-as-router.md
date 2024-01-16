@@ -5,6 +5,8 @@ tags:
 ---
 OpenWrt is an open source linux system tailored for routers. Using an offical OpenWrt VM system as router has obvious benefits: enjoy the most flexibility of OpenWrt and get rid of the outdated vendor firmware.
 
+<!-- more -->
+
 ## Environment and Hardware
 The current router of home network has LAN IP 10.0.0.1. This router is going to be replaced by an OpenWrt virtual machine on Proxmox VE.
 The Proxmox VE server is a fanless x64 mini pc with 4 * 2.5Gbps NICs with static IP 10.0.0.10. It is running with ZFS as its root file system.
