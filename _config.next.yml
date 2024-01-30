@@ -155,7 +155,7 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
-  Linkedin: https://www.linkedin.com/in/adam-han-999005277/ || fab fa-linkedin
+  Linkedin: https://www.linkedin.com/in/adamxhan/ || fab fa-linkedin
   GitHub: https://github.com/meliber || fab fa-github
   #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
   #Weibo: https://weibo.com/yourname || fab fa-weibo
