@@ -35,3 +35,4 @@ There are many aspects of convenience. To deploy a samba server at home, using L
 
 ## When I Revert to Windows
 It's not freedom if I am not allowed to use Windows. And PDF forms pull me back to Windows.
+Update: Firefox supports PDF with XFA Forms.
