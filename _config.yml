@@ -43,16 +43,25 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
+
+# Highlight
+# _config.yml
 syntax_highlighter: highlight.js
 highlight:
-  line_number: true
+  enable: true
   auto_detect: false
+  line_number: true
+  line_threshold: 10
   tab_replace: ''
+  exclude_languages:
+    - example
   wrap: true
   hljs: false
 prismjs:
+  enable: false
   preprocess: true
   line_number: true
+  line_threshold: 0
   tab_replace: ''
 
 # Home page setting
