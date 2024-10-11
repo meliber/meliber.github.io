@@ -1,5 +1,5 @@
 ---
-title: Migrate_Openwrt_VM_to_New_Node
+title: Migrate Openwrt VM to New Node
 date: 2024-10-10 18:48:51
 tags:
 ---
