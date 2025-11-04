@@ -2,11 +2,8 @@
 title: Quick Calculation for Land Subdivision in GIS Settings
 date: 2025-11-02 20:53:30
 tags:
+mathjax: true
 ---
-<h1 style="text-align: center;">Quick Calculation for Land Subdivision in GIS Settings</h1>
-
-<center>Xiao Han (aka Adam)</center>
-
 Question: Offset one edge of a quadrilateral $l$ (since get a new edge $m$) to form a new (usually smaller) quadrilateral (parcel) of which area equals to a predefined value $A$. Find the offset distance $h$.
 
 <img src="https://assets.meliber.work/lhm_offset_parcel.svg" style="display: block; margin-left:auto; margin-right: auto; width=30%;" />
@@ -16,7 +13,6 @@ Short answer: find the linear equation between offset distance $h$ and offset ed
 <center>$A = (l + m) * h * 0.5$</center>
 
 It's easy to pick the right root as the solution for $h$.
-
 
 The linear relationship of $h$ and $m$ can be easily got from trigonometry:
 
@@ -51,11 +47,8 @@ Offset $l$ by a specific value, say 10, read $m_{10}$ from GIS software, then $m
 Problem solved without angles or distance of $g$ which could be far away.
 
 My practice is putting logic into a Excel form with 3 parameters.
-<br>
+
 Area of Need in $B66$
-<br>
 Length of Original Edge in $B67$
-<br>
 Length of Edge by offset $10$ in $B68$
-<br>
 Required Offset in $B69$: $=IFERROR((-B67+SQRT(B67*B67+2*(B68-B67)/10*B66))/((B68-B67)/10),0)$
