@@ -22,7 +22,6 @@ The linear relationship of $h$ and $m$ can be easily got from trigonometry:
 
 The quadratic equation of $h$ is:
 <center>$-\frac{(cot(α) + cot(β))}{2} * h^2 + l * h - A = 0$</center>
-The positive root of this equation is the solution of $h$.
 
 There is another ways to explain $m = ah + b$.
 
@@ -46,9 +45,9 @@ Offset $l$ by a specific value, say 10, read $m_{10}$ from GIS software, then $m
 
 Problem solved without angles or distance of $g$ which could be far away.
 
-My practice is putting logic into a Excel form with 3 parameters.
+My practice is putting the logic into a Excel form with 3 parameters.
 
-Area of Need in $B66$
+Area of New Parcel in $B66$
 Length of Original Edge in $B67$
 Length of Edge by offset $10$ in $B68$
 Required Offset in B69: =IFERROR((-B67+SQRT(B67*B67+2*(B68-B67)/10*B66))/((B68-B67)/10),0)
