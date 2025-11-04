@@ -1,43 +1,60 @@
-name: Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
       - main  # default branch
+  # Allow manual workflow runs from the Actions tab
+  workflow_dispatch:
+
+# Cancel in-progress deployments to prevent conflicts
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+# Set minimal permissions at workflow level for security
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          # Fetch full git history for better build reproducibility
+          fetch-depth: 0
           # If your repository depends on submodule, please see: https://github.com/actions/checkout
           submodules: recursive
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '21'
-      - name: Cache NPM dependencies
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.OS }}-npm-cache
-          restore-keys: |
-            ${{ runner.OS }}-npm-cache
-      - name: Install Dependencies
-        run: npm install
-      - name: Build
+          # Use built-in npm caching for faster installs
+          cache: 'npm'
+      
+      - name: Install dependencies
+        # Use npm ci for reproducible builds based on package-lock.json
+        run: npm ci
+      
+      - name: Build site
         run: npm run build
+      
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+  
   deploy:
     needs: build
-    permissions:
-      pages: write
-      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -45,4 +62,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
