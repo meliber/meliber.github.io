@@ -51,4 +51,4 @@ My practice is putting logic into a Excel form with 3 parameters.
 Area of Need in $B66$
 Length of Original Edge in $B67$
 Length of Edge by offset $10$ in $B68$
-Required Offset in $B69: =IFERROR((-B67+SQRT(B67*B67+2*(B68-B67)/10*B66))/((B68-B67)/10),0)$
+Required Offset in B69: =IFERROR((-B67+SQRT(B67*B67+2*(B68-B67)/10*B66))/((B68-B67)/10),0)
