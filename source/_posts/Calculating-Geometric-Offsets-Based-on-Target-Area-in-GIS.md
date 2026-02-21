@@ -80,7 +80,7 @@ $$ h = \frac{2 S_0}{L} \left( \sqrt{1 + \frac{\text{AREA}}{S_0}} - 1 \right) $$
 To implement this in a GIS tool (like a QGIS plugin or ArcPy script), follow this logic:
 
 1.  **Find Intersection ($O$):**
-    Compute the intersection point of the infinite lines defined by vectors $\vec{AB}$ and $\vec{CD}$. *(Note: Use a tolerance variable like `epsilon` to handle floating-point inaccuracies when determining if lines are parallel).*
+    Compute the intersection point of the infinite lines defined by vectors $\vec{AB}$ and $\vec{CD}$. *(Note: Use a tolerance variable like $\epsilon$ to handle floating-point inaccuracies when determining if lines are parallel).*
 
 2.  **Calculate Initial Virtual Area ($S_0$):**
     Calculate the area of the triangle formed by $O, A, C$.
