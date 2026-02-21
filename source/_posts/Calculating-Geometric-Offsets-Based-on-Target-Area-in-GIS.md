@@ -13,7 +13,7 @@ mathjax: true
 
 ## Introduction
 
-In GIS (Geographic Information Systems) development, a common yet complex task is constructing geometry based on constraints. A specific scenario involves offsetting a line segment between two non-parallel boundaries to achieve a specific polygon area.
+Land subdivision sometimes involves offsetting a line segment between two non-parallel boundaries to achieve a specific polygon area.
 
 **The Scenario:**
 A user initiates a tool and defines:
@@ -106,7 +106,7 @@ To implement this in a GIS tool (like a QGIS plugin or ArcPy script), follow thi
 
 ## Python Implementation
 
-Below is a robust Python function suitable for integration into GIS software. It features an `epsilon` parameter to safeguard against floating-point precision errors during parallel line detection and area boundary checks.
+Below is a simply python function to do such calculation.
 
 ```python
 import math
