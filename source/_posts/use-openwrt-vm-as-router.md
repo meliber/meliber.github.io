@@ -17,7 +17,7 @@ The Proxmox VE server is a fanless x64 mini pc with 4 * 2.5Gbps NICs with static
 3. Add four vmbrs into the OpenWrt VM. One for WAN, others for LAN.
 4. Start the OpenWrt VM, use `ip addr` to check all NICs in the VM. Compare the MAC to the information in Proxmox host to figure out the correlation between NIC names and physical ethernet ports.
 5. I prefer to use vim and git on OpenWrt to edit and keep tracks of configuration files. `less` is needed to display ANSI color properly when using `git diff`.
-```ash install vim-full git less on OpenWrt
+```bash install vim-full git less on OpenWrt
 opkg update
 opkg install vim-full git less
 ```

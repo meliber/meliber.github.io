@@ -209,3 +209,4 @@ def calculate_offset_geometry(ptA, ptB, ptC, ptD, target_area, epsilon=1e-8):
         'A_prime': A_prime,
         'C_prime': C_prime
     }
+```
