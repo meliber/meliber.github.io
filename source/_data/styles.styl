@@ -1,0 +1,28 @@
+// Custom code block background
+code,
+pre,
+.highlight,
+.code-block,
+figure.highlight,
+td.code,
+td.gutter {
+  background: #000 !important;
+}
+
+// Ensure inline code also gets dark background
+code {
+  background: #000 !important;
+  color: #e6e6e6 !important;
+}
+
+// Override for code blocks within highlight
+.highlight pre,
+.highlight table {
+  background: #000 !important;
+}
+
+// Gutter (line numbers) styling
+.highlight .gutter pre {
+  background: #000 !important;
+  color: #666 !important;
+}
