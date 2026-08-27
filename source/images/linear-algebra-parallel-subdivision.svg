@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-labelledby="title description">
+  <title id="title">Parallel subdivision by scaling two vectors</title>
+  <desc id="description">Vectors from O to A and C are scaled by lambda to reach A prime and C prime. The two connecting segments are parallel, and the area between them is the target area.</desc>
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ea580c"/>
+    </marker>
+    <style>
+      .axis { stroke: #94a3b8; stroke-width: 1.5; }
+      .ray { stroke: #cbd5e1; stroke-width: 2; stroke-dasharray: 6 6; }
+      .original { stroke: #2563eb; stroke-width: 4; fill: none; }
+      .scaled { stroke: #ea580c; stroke-width: 4; fill: none; }
+      .point { stroke: #ffffff; stroke-width: 2; }
+      .label { font: 17px sans-serif; fill: #0f172a; }
+      .note { font: 15px sans-serif; fill: #475569; }
+    </style>
+  </defs>
+
+  <rect width="720" height="480" fill="#ffffff"/>
+  <line class="axis" x1="70" y1="405" x2="665" y2="405"/>
+  <line class="axis" x1="90" y1="430" x2="90" y2="70"/>
+
+  <polygon points="370,370 300,300 467,216 593,342" fill="#fb923c" fill-opacity="0.16"/>
+  <line class="ray" x1="90" y1="405" x2="625" y2="338"/>
+  <line class="ray" x1="90" y1="405" x2="490" y2="205"/>
+
+  <line class="scaled" x1="90" y1="405" x2="593" y2="342" marker-end="url(#arrow-orange)"/>
+  <line class="scaled" x1="90" y1="405" x2="467" y2="216" marker-end="url(#arrow-orange)"/>
+  <line class="scaled" x1="593" y1="342" x2="467" y2="216"/>
+
+  <line class="original" x1="90" y1="405" x2="370" y2="370" marker-end="url(#arrow-blue)"/>
+  <line class="original" x1="90" y1="405" x2="300" y2="300" marker-end="url(#arrow-blue)"/>
+  <line class="original" x1="370" y1="370" x2="300" y2="300"/>
+
+  <circle class="point" cx="90" cy="405" r="6" fill="#0f172a"/>
+  <circle class="point" cx="370" cy="370" r="6" fill="#2563eb"/>
+  <circle class="point" cx="300" cy="300" r="6" fill="#2563eb"/>
+  <circle class="point" cx="593" cy="342" r="6" fill="#ea580c"/>
+  <circle class="point" cx="467" cy="216" r="6" fill="#ea580c"/>
+
+  <text class="label" x="68" y="430">O</text>
+  <text class="label" x="382" y="373">A</text>
+  <text class="label" x="274" y="291">C</text>
+  <text class="label" x="604" y="346">A′</text>
+  <text class="label" x="445" y="200">C′</text>
+  <text class="note" x="315" y="348">AC</text>
+  <text class="note" x="520" y="263">A′C′ ∥ AC</text>
+  <text class="note" x="394" y="309">target area T</text>
+  <text class="note" x="155" y="374">a</text>
+  <text class="note" x="147" y="343">c</text>
+  <text class="note" x="430" y="363">λa</text>
+  <text class="note" x="337" y="270">λc</text>
+</svg>
