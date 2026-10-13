@@ -2,33 +2,39 @@
 title: A Coordinates Transformation Method for Standard Blocks
 date: 2024-04-30 13:34:26
 tags:
+  - GIS
+  - Python
+  - Coordinate Systems
+  - Automation
+categories:
+  - GIS Development
 ---
 # 1. Introduction
-In offshore petroleum exploration practice, all the coordinates of blocks designed by geologists serving a particular purpose should be provided in Degree-Minute-Second format,  in which degree uses 2 or 3 digits, minute uses 2 digits, and second uses 2 digits in one of four options 00, 15, 30, 45 ( increment with a quarter of a minute ). All coordinates should list in clockwise order starts from the name vertex (the most northeast vertex). Such a block is called a "standard block".
+In offshore petroleum exploration practice, the coordinates of blocks designed by geologists for a particular purpose must be provided in Degree-Minute-Second format: the degree uses 2 or 3 digits, the minute uses 2 digits, and the second uses 2 digits, in one of four values — 00, 15, 30 or 45 (in increments of a quarter of a minute). All coordinates must be listed in clockwise order, starting from the name vertex (the most northeast vertex). Such a block is called a "standard block".
 
-[Affleck Oil Field, United Kingdom](https://www.offshore-technology.com/wp-content/uploads/sites/20/2017/09/2-affleck-janice.jpg) is a example of blocks.
+[Affleck Oil Field, United Kingdom](https://www.offshore-technology.com/wp-content/uploads/sites/20/2017/09/2-affleck-janice.jpg) is an example of such a block.
 
 # 2. The Needs of Transformation
 
-Design blocks is a daily work in resource exploration industry. Blocks serve in many purpose, including but not limited to administration (relinquish part of a block, dissolve several blocks into one block), block bid campaign, etc.
+Designing blocks is daily work in the resource exploration industry. Blocks serve many purposes, including but not limited to administration (relinquishing part of a block, dissolving several blocks into one), block bid campaigns, and so on.
 
-Geologists usually draft blocks on a projected geological setting basemap. Unfortunately some mapping software doesn't have snap functionality. This software can only export polygons (drafted blocks) in projected XY format. At least it can display a geodetic reference grid in 15 seconds.
+Geologists usually draft blocks on a projected geological setting basemap. Unfortunately, the mapping software in use has no snap functionality. It can only export polygons (the drafted blocks) in projected XY format. It can, however, display a geodetic reference grid at 15-second intervals.
 
-A new workflow is designed to deal with the blocks:
-1. Geologists design blocks with vertices of which are visually but not precisely spot on the nodes of a 15-second geodetic reference grid.
+A new workflow was designed to handle the blocks:
+1. Geologists design blocks whose vertices are visually, but not precisely, on the nodes of a 15-second geodetic reference grid.
 2. All blocks reside in a layer, with valid identifiers.
-3. Export the design layer of blocks in projection format as text file.
+3. Export the design layer of blocks in projected format as a text file.
 4. Write a program to read the file and generate standard blocks.
 
 # 3. Implementation
-This rudimentary implementation of coordinate transform tool in Python is called "transco". The name stands for "TRANSformation of COordinates".
+The implementation is a Python package called "transco" (TRANSformation of COordinates), written in 2022 and in use since then.
 
-Transco uses [pyproj](https://github.com/pyproj4/pyproj) to do actual transformation. Pyproj is a python interface to [PROJ](http://proj.org/). [Shaplely](https://github.com/shapely/shapely) is also used in this program. Shapely is a python wrapper of [GEOS](https://github.com/libgeos/geos).
+transco uses [pyproj](https://github.com/pyproj4/pyproj) to perform the transformation. pyproj is a Python interface to [PROJ](http://proj.org/). [Shapely](https://github.com/shapely/shapely) is also used. Shapely is a Python wrapper for [GEOS](https://github.com/libgeos/geos).
 
 ## 3.1 class
-Transco use 3 classes to represent the data: Layer, Block and Point. points are property of Block instance, and blocks are property of Layer instance.
+transco uses three classes to represent the data: Layer, Block and Point. Points are properties of a Block instance, and blocks are properties of a Layer instance.
 
-The definition of Layer like this:
+The Layer class is defined as follows:
 ```python
 class Layer:
     """
@@ -99,7 +105,7 @@ class Layer:
     def __repr__(self):
         return self.__str__()
 ```
-The `coor_type`, `crs`, `location` properties are used to get the correspond CRS object from pyproj.
+The `coor_type`, `crs` and `location` properties are used to obtain the corresponding CRS object from pyproj.
 
 The Block class:
 ```python
@@ -162,13 +168,13 @@ class Point:
         self._offset()
         self._offset_2_dms()
 ```
-Like before, the point instance gets CRS from its Block object.
+As before, a Point instance gets its CRS from its Block object.
 
 ## 3.2 Function
 
-So the basic idea is, original XY coordinates are transformed into Degrees, then snap to the nearest geodetic reference grid node by _offset method.
+The basic idea is that the original XY coordinates are transformed into degrees and then snapped to the nearest geodetic reference grid node by the `_offset` method.
 
-There are some functions to modidy the blocks, like rotate points if it's not clockwise, remove reduandant points, check errors, compute block name by spatial relationship, etc.
+Several methods modify the blocks: rotating points if they are not clockwise, removing redundant points, checking for errors, computing block names by spatial relationship, and so on.
 
 Here is the function for getting CRS.
 ```python
@@ -197,7 +203,7 @@ def d2dms(x):
     return d, m, s
 ```
 
-The last setup is defining functions to call methods of objects.
+The last step is defining functions to call methods on the objects.
 ```python
 def load_file(
     file="df_design.txt", coor_type="proj", crs="wgs84utm", location="location"
@@ -254,4 +260,10 @@ def main():
 ...
 ```
 
-After that, I can call the `main` function in CLI, or call functions and calss directly in a interactive python environment, or use it in a Jupyter notebook.
+After that, I can call the `main` function from the CLI, call the functions and classes directly in an interactive Python environment, or use it in a Jupyter notebook.
+
+# 4. Results
+
+transco has been in use since 2022. A 50-block batch that previously took roughly an hour per block to prepare by hand in Excel now runs in about 10 minutes.
+
+The larger gain is in the revision loop. Geologists revise their block designs repeatedly before a final version is agreed, and the manual cost was paid again on every revision. Re-running transco costs nothing, so a design can be iterated as many times as the work requires.

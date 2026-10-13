@@ -3,6 +3,11 @@ title: Setting Up a Network Scanner on Linux
 date: 2024-01-09 14:22:41
 author: Adam Han
 tags:
+  - Linux
+  - Networking
+  - Hardware
+categories:
+  - Linux
 ---
 
 I have used my network scanner through Windows for a long time. It works well except I need to get a Windows laptop. Although the default storage path of the scanner resides in a samba server, it is still tedious to do daily scan. I managed to set it up on Linux. This blog is for my reference.

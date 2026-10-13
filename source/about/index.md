@@ -4,20 +4,33 @@ layout: page
 date: 2024-01-09 00:04:41
 ---
 ## Summary
-Adaptable geological technologist with problem solving skills, a drive to learn new technology, and over 10 years of experience working in GIS related roles.
-Linux user, love open source, technology, reading and learning.
+
+Geologist and GIS technician who automates his own work. Thirteen years turning messy spatial data into standards-compliant output — petroleum block coordinates at CNOOC Shenzhen, civic addressing and land information at the City of Winnipeg.
+
+In both roles I built the tooling myself, because no employer ever provided software that could do the job. TRANSCO cut a 50-block batch that took roughly an hour per block by hand to about 10 minutes; the civic-addressing workflow cut a typical task from 21 hours to 3 hours.
+
+Currently a GIS Technician with Land Information Services at the City of Winnipeg. Permanent Resident of Canada.
+
+Tried Linux in 2004, using it daily since 2016. I like open source, technology, reading, and learning.
 
 ## Skills
-- Petroleum exporation and assessment, experience in [PRMB](https://en.wikipedia.org/wiki/Pearl_River_Mouth_basin)
-- Programming in Python, SQL, JavaScript, Bash
-- Data and GIS data process in Python
 
-## Using software
-- Arch Linux
-- Proxmox VE 8
-- VSCode
-- VIM
-- Python
+- Petroleum exploration and assessment — experience in the [Pearl River Mouth Basin](https://en.wikipedia.org/wiki/Pearl_River_Mouth_basin)
+- Geospatial data: coordinate reference systems, geodetic datums, map projections, EPSG codes
+- Programming: Python (pandas, pyproj/PROJ, Shapely, NumPy), SQL, JavaScript, Bash
+- Spatial databases: PostgreSQL/PostGIS, MySQL
+- Desktop GIS: QGIS, ArcGIS Pro, GeoMedia Pro
+
+## Technical writing
+
+- [A Coordinates Transformation Method for Standard Blocks](/2024/04/30/A-Coordinates-Transformation-Method-for-Standard-Blocks/)
+- [Quick Calculation for Land Subdivision in GIS Settings](/2025/11/02/Quick_Calculation_for_Land_Subdivision_in_GIS_Settings/)
+- [Calculating Geometric Offsets Based on Target Area in GIS](/2026/02/21/Calculating-Geometric-Offsets-Based-on-Target-Area-in-GIS/)
+- [Side Determination of Points on Polylines using 3D Cross Product](/2026/02/22/Side-Determination-of-Points-on-Polylines-using-3D-Cross-Product/)
+
+## Environment
+
+- Arch Linux, Proxmox VE, VSCode, Vim
 
 ## Books
 - [1984](https://www.goodreads.com/book/show/61439040-1984)

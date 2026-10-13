@@ -2,6 +2,10 @@
 title: Why I Use Linux
 date: 2024-01-11 15:17:31
 tags:
+  - Linux
+  - Open Source
+categories:
+  - Linux
 ---
 I tried to use Linux back in 2004, and started to use it as a daily operating system in 2016. Maybe because I wasn't (though I tried to be one) an IT worker, I never met a person using Linux in person (using Redhat Workstation for Seismic Data Interpretation doesn't count). I was asked by many people why using Linux?
 

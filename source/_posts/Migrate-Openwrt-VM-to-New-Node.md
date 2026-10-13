@@ -2,6 +2,12 @@
 title: Migrate Openwrt VM to New Node
 date: 2024-10-10 18:48:51
 tags:
+  - Linux
+  - OpenWrt
+  - Proxmox
+  - Networking
+categories:
+  - Linux
 ---
 The Openwrt VM running in my fanless pc is the main router of home network. Recently I got a new router which has 6 NICs and a more powerful CPU. So I need to migrate the Openwrt VM to the new machine.
 

@@ -2,6 +2,12 @@
 title: Use Openwrt VM as Router
 date: 2024-01-10 21:36:30
 tags:
+  - Linux
+  - OpenWrt
+  - Proxmox
+  - Networking
+categories:
+  - Linux
 ---
 OpenWrt is an open source linux system tailored for routers. Using an offical OpenWrt VM system as router has obvious benefits: enjoy the most flexibility of OpenWrt and get rid of the outdated vendor firmware.
 
