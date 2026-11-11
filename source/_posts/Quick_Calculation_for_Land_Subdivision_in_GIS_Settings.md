@@ -12,7 +12,7 @@ mathjax: true
 ---
 Question: Offset one edge of a quadrilateral $l$ (giving a new edge $m$) to form a new (usually smaller) quadrilateral (parcel) whose area equals a predefined value $A$. Find the offset distance $h$.
 
-<img src="https://assets.meliber.work/lhm_offset_parcel.svg" style="display: block; margin-left: auto; margin-right: auto; width: 30%;" />
+<img src="/images/lhm_offset_parcel.svg" alt="A quadrilateral parcel whose left edge l is offset into the parcel to a new dashed edge m; a dotted line h marks the offset distance between l and m." style="display: block; margin-left: auto; margin-right: auto; width: 30%; min-width: 280px; max-width: 100%;" />
 
 Short answer: find the linear equation between offset distance $h$ and offset edge $m$, then solve the quadratic equation for the offset $h$:
 <center>$m = ah + b$</center>
@@ -22,7 +22,7 @@ It is easy to pick the correct root as the solution for $h$.
 
 The linear relationship between $h$ and $m$ follows from trigonometry:
 
-<img src="https://assets.meliber.work/lhm_offset_trigonometry.svg" style="display: block; margin-left: auto; margin-right: auto; width: 30%;" />
+<img src="/images/lhm_offset_trigonometry.svg" alt="The same parcel with the angles α and β marked at the top and bottom ends of edge l, and dotted lines of length h drawn from l to the offset edge m at the top, middle and bottom." style="display: block; margin-left: auto; margin-right: auto; width: 30%; min-width: 280px; max-width: 100%;" />
 
 <center>$m = -(cot(α) + cot(β)) * h + l$</center>
 
@@ -31,7 +31,7 @@ The quadratic equation of $h$ is:
 
 There are other ways to explain $m = ah + b$.
 
-<img src="https://assets.meliber.work/uvl_offset_parcel.svg" style="display: block; margin-left: auto; margin-right: auto; width: 30%;" />
+<img src="/images/uvl_offset_parcel.svg" alt="A trapezoid with near edge l and far edge m, its slanted sides extended back to a point O; dotted vectors u and v run from O to the ends of l, and g runs from O to l, continuing as h to m." style="display: block; margin-left: auto; margin-right: auto; width: 30%; min-width: 280px; max-width: 100%;" />
 
 Let $O$ be the origin; $\vec{u}$, $\vec{v}$ and $\vec{g}$ are vectors, so $l = || \vec{u} - \vec{v}||$, $h = ||k\vec{g} - \vec{g}||$, $m = ||k\vec{u} - k\vec{v}||$ where $k$ is the scale ratio.
 Then the linear equation relating $m$ and $h$ can be proved.
