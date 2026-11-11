@@ -3,16 +3,15 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # default branch
-  # Allow manual workflow runs from the Actions tab
+      - main
+  # Allow manual runs from the Actions tab
   workflow_dispatch:
 
-# Cancel in-progress deployments to prevent conflicts
+# One deployment at a time; let an in-progress deployment finish
 concurrency:
   group: pages
   cancel-in-progress: false
 
-# Set minimal permissions at workflow level for security
 permissions:
   contents: read
   pages: write
@@ -23,36 +22,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          # Fetch full git history for better build reproducibility
-          fetch-depth: 0
-          # If your repository depends on submodule, please see: https://github.com/actions/checkout
-          submodules: recursive
-      
+        uses: actions/checkout@v7
+
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: '21'
-          # Use built-in npm caching for faster installs
+          node-version: '24' # current LTS
           cache: 'npm'
-      
+
       - name: Install dependencies
-        # Use npm ci for reproducible builds based on package-lock.json
         run: npm ci
-      
+
       - name: Build site
         run: npm run build
-      
+
       - name: Configure Pages
-        uses: actions/configure-pages@v5
-      
+        uses: actions/configure-pages@v6
+
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./public
-  
+
   deploy:
     needs: build
     environment:
@@ -62,4 +53,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
