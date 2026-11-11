@@ -1,0 +1,19 @@
+/* Pure-black code blocks, carried over from the NexT setup */
+.markdown-body pre, .markdown-body pre code.hljs, figure.highlight, figure.highlight table, figure.highlight .gutter pre { background-color: #000 !important; }
+
+/* Dark mode for SVG diagrams in posts.
+   Diagrams such as the Excalidraw exports draw dark ink (#1e1e1e) on a transparent
+   background, which disappears on a dark page. Invert lightness but keep hues
+   (hue-rotate undoes the colour flip), so dark lines turn light and blue stays blue.
+   The selectors mirror Fluid's own: follow the OS setting unless the reader picked
+   a scheme with the toggle, and never apply when printing. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-user-color-scheme]) .markdown-body img[src$=".svg"] {
+    filter: invert(.9) hue-rotate(180deg);
+  }
+}
+@media not print {
+  [data-user-color-scheme="dark"] .markdown-body img[src$=".svg"] {
+    filter: invert(.9) hue-rotate(180deg);
+  }
+}
